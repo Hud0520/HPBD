@@ -21,7 +21,7 @@ background-image: radial-gradient(#374566, #010203);
             width: 800px;
             height: 420px;
             padding: 10px;
-            margin: 0 auto;
+            margin: auto;
             position: relative;
             overflow: hidden;
         }
@@ -286,6 +286,7 @@ background-image: radial-gradient(#374566, #010203);
     <meta content="clickberry-extension-here">
     <style type="text/css"></style>
     <style type="text/css"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style type="text/css"></style><style type="text/css"></style><script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script><meta content="clickberry-extension-here"></head>
 
 <body>
@@ -317,7 +318,10 @@ background-image: radial-gradient(#374566, #010203);
         if (document.location.search.match(/type=embed/gi)) {
             window.parent.postMessage('resize', "*");
         }
-
+        $(document).ready(function(){
+            var he = ($(window).height()-420)/2;
+            $(".container").css("marginTop",he );
+        })
     </script>
 
 
